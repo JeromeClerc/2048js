@@ -1,0 +1,101 @@
+body {
+    background: #e8e8e8;
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+}
+h1 {
+    color: #666;
+    font-size: 4em;
+}
+.main-wrapper {
+    margin: 100px auto 0 auto;
+    width: 290px;
+}
+.row {
+    width: 100%;
+    position: relative;
+}
+.text-center {
+    text-align: center;
+}
+
+.game-wrapper {
+    background: #fff;
+    width: 290px;
+    height: 290px;
+    padding: 3px 2px 2px 3px;
+    margin: auto;
+}
+.end-game {
+    background: #fff;
+    width: 290px;
+    height: 290px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    
+    color: #000;
+    font-size: 2.5em;
+    text-align: center;
+    
+    line-height: 7em;
+    
+    display: none;
+}
+.grid-slot {
+    width: 64px;
+    height: 64px;
+    margin: 2px;
+    padding: 2px;
+    float: left;
+    background: #999;
+}
+.tile {
+    width: 62px;
+    height: 46px;
+    margin: 1px;
+    
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    color: #333;
+    
+    text-align: center;
+    padding-top: 0.5em;
+}
+.one {
+    background: #d7cd54;
+}
+.two {
+    background: #c4933a;
+}
+.three {
+    background: #b15825;
+}
+.four {
+    background: #a01917;
+}
+.five {
+    background: #945721;
+}
+.six {
+    background: #7b832b;
+}
+.seven {
+    background: #3ba335;
+}
+.eight {
+    background: #299060;
+}
+.nine {
+    background: #167d80;
+}
+.ten {
+    background: #0e6793;
+}
+.eleven {
+    background: #184f9d;
+}
