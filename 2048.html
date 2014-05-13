@@ -3,21 +3,52 @@
     <head>
         <title>2048</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="2048.css" />
-        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+        <link rel="stylesheet" href="css/foundation.min.css" />
+        <link rel="stylesheet" href="css/2048.min.css" />
     </head>
     <body>
-        <div class="main-wrapper">
-            <div class="row text-center"><h1>2048</h1></div>
-            <div class="row">
-                <p>score : <span id="score">0</span></p>
-            </div>
-            <div class="row">
-                <div class="game-wrapper"></div>
-                <div class="end-game"></div>
+        <div class="row">
+            <div class="small-5 small-centered columns">
+                <div class="row">
+                    <div class="small-12 columns text-center">
+                        <h1>2048js</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-6 columns">
+                        <div class="button success expand tiny round"><span id="score">0</span> pts</div>
+                    </div>
+                    <div class="small-6 columns text-right">
+                        <div class="button secondary expand tiny round"><span id="moves">0</span> moves</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Here comes the game -->
+                    <div id="game-wrapper">
+                        <div class="small-12 columns" id="grid-wrapper"></div>
+                        <div class="end-game"></div>
+                    </div>
+                    <!-- #Here comes the game -->
+                </div>
+                <div class="row">
+                    <div class="small-12 columns text-center">
+                        <a class="button small round" role="new-game">New game</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns text-center">
+                        <img src="images/keyboard.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns text-center">
+                        Use your arrow keys to play
+                    </div>
+                </div>
             </div>
         </div>
     </body>
-    <script src="2048.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/2048.min.js"></script>
 </html>

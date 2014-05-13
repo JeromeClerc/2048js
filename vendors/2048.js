@@ -12,10 +12,16 @@ $(document).ready(function() {
     // Démarrer un nouveau jeu
     newGame();
     
+    $("body").on("click", "a.button", function() {
+        if($(this).attr("role") === "new-game") {
+            newGame();
+        }
+    });
+    
     // Ecoute des actions clavier
     $(document).on('keyup', function(e) {
         if(Game) {
-            if(e.keyCode == KEY_LEFT) {
+            if(e.keyCode === KEY_LEFT) {
                 if(!moveLeft()) {
                     if(!checkIdSlotsAreFull()) {
                         addOneTile();
@@ -28,7 +34,7 @@ $(document).ready(function() {
                     addOneTile();
                 }
             }
-            if(e.keyCode == KEY_RIGHT) {
+            if(e.keyCode === KEY_RIGHT) {
                 if(!moveRight()) {
                     if(!checkIdSlotsAreFull()) {
                         addOneTile();
@@ -41,7 +47,7 @@ $(document).ready(function() {
                     addOneTile();
                 }
             }
-            if(e.keyCode == KEY_UP) {
+            if(e.keyCode === KEY_UP) {
                 if(!moveUp()) {
                     if(!checkIdSlotsAreFull()) {
                         addOneTile();
@@ -54,7 +60,7 @@ $(document).ready(function() {
                     addOneTile();
                 }
             }
-            if(e.keyCode == KEY_DOWN) {
+            if(e.keyCode === KEY_DOWN) {
                 if(!moveDown()) {
                     if(!checkIdSlotsAreFull()) {
                         addOneTile();
@@ -66,6 +72,9 @@ $(document).ready(function() {
                 else {
                     addOneTile();
                 }
+            }
+            if(e.keyCode === KEY_LEFT || e.keyCode === KEY_DOWN || e.keyCode === KEY_UP || e.keyCode === KEY_RIGHT) {
+                addMove();
             }
         }
     });
@@ -218,13 +227,20 @@ $(document).ready(function() {
             endOfTheGame(true);
         }
     }
+    
+    function addMove() {
+        Moves = Moves + 1;
+        $("#moves").empty().append(Moves);
+    }
    
     function newGame() {
         initGrid();
         initTilesClass();
         initScore();
+        initMoves();
         initGame();
         setRandomTiles(2);
+        $(".end-game").hide();
     }
     
     function endOfTheGame(state) {
@@ -276,6 +292,12 @@ $(document).ready(function() {
     
     function initScore() {
         Score = 0;
+        $("#score").empty().append(Score);
+    }
+    
+    function initMoves() {
+        Moves = 0;
+        $("#moves").empty().append(Moves);
     }
     
     function initGame() {
@@ -322,15 +344,16 @@ $(document).ready(function() {
         buildEmptyGrid();
         for(var i = 1; i < 17; i++) {
             if(Grid[i] !== 0) {
-                $("#tile-" + i).addClass(TilesClass[Grid[i]]).attr('value', Grid[i]).empty().append(Grid[i]);
+                $("#tile-" + i).addClass(TilesClass[Grid[i]]).empty().append(Grid[i]);
             }
         }
     }
     
     function buildEmptyGrid() {
-        $(".game-wrapper").empty();
+        $("#grid-wrapper").empty().append('<ul class="small-block-grid-4">');
         for(var i = 1; i < 17; i++) {
-            $(".game-wrapper").append('<div class="grid-slot" id="slot-' + i + '"><div class="tile" id="tile-' + i + '" value="0"></div></div>');
+            $(".small-block-grid-4").append('<li><div class="tile" id="tile-' + i + '">&nbsp;</div></li>');
         }
+        $("#grid-wrapper").append("</ul>");
     }
 });
