@@ -47,7 +47,7 @@ h1 {
 }
 #game-wrapper {
     position: relative;
-    
+
     #grid-wrapper {
         background: #fff;
         padding-top: 0.3rem;
@@ -61,7 +61,7 @@ h1 {
             background: @tile-empty;
             text-align: center;
             font-weight: bold;
-            font-size: 2em;
+            font-size: 1.8em;
             line-height: 2em;
             padding-top: 0.3em;
             padding-bottom: 0.4em;
@@ -102,7 +102,7 @@ h1 {
             background: @tile-eleven;
         }
     }
-    
+
     //----- End of the game mask -------------------------------
     .end-game {
         background: #fff;
@@ -114,7 +114,34 @@ h1 {
         color: #000;
         font-size: 2.5em;
         text-align: center;
-        line-height: 9.1em;
+        line-height: 8.2em;
         display: none;
+    }
+}
+
+//----------------------------------------------------------------
+//----- MEDIUM SCREENS -------------------------------------------
+//----------------------------------------------------------------
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    
+}
+
+//----------------------------------------------------------------
+//----- LARGE SCREENS --------------------------------------------
+//----------------------------------------------------------------
+@media only screen and (min-width: 64.063em) {
+    #game-wrapper {
+
+        #grid-wrapper {
+
+            .tile {
+                font-size: 2em;
+            }
+        }
+
+        //----- End of the game mask -------------------------------
+        .end-game {
+            line-height: 9.1em;
+        }
     }
 }

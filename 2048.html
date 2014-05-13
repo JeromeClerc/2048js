@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="row">
-            <div class="small-5 small-centered columns">
+            <div class="small-11 small-centered medium-5 medium-centered columns">
                 <div class="row">
                     <div class="small-12 columns text-center">
                         <h1>2048js</h1>
@@ -38,17 +38,19 @@
                 </div>
                 <div class="row">
                     <div class="small-12 columns text-center">
-                        <img src="images/keyboard.png">
+                        <img src="images/keyboard.png" class="hide-for-touch" style="margin: auto;">
                     </div>
                 </div>
                 <div class="row">
                     <div class="small-12 columns text-center">
-                        <span class="label secondary radius">Use your arrow keys to play</span>
+                        <span class="label secondary radius hide-for-touch">Use your arrow keys to play</span>
+                        <span class="label secondary radius show-for-touch">Swipe to play</span>
                     </div>
                 </div>
             </div>
         </div>
     </body>
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/2048.min.js"></script>
 </html>

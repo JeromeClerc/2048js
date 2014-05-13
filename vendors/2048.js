@@ -79,6 +79,69 @@ $(document).ready(function() {
         }
     });
     
+    // Ecoute des swipe
+    $("#grid-wrapper").swipe({
+        swipe:function(event, direction) {
+            if(Game) {
+                if(direction === "left") {
+                    if(!moveLeft()) {
+                        if(!checkIdSlotsAreFull()) {
+                            addOneTile();
+                        }
+                        else {
+                            endOfTheGame(false);
+                        }
+                    }
+                    else {
+                        addOneTile();
+                    }
+                }
+                if(direction === "right") {
+                    if(!moveRight()) {
+                        if(!checkIdSlotsAreFull()) {
+                            addOneTile();
+                        }
+                        else {
+                            endOfTheGame(false);
+                        }
+                    }
+                    else {
+                        addOneTile();
+                    }
+                }
+                if(direction === "up") {
+                    if(!moveUp()) {
+                        if(!checkIdSlotsAreFull()) {
+                            addOneTile();
+                        }
+                        else {
+                            endOfTheGame(false);
+                        }
+                    }
+                    else {
+                        addOneTile();
+                    }
+                }
+                if(direction === "down") {
+                    if(!moveDown()) {
+                        if(!checkIdSlotsAreFull()) {
+                            addOneTile();
+                        }
+                        else {
+                            endOfTheGame(false);
+                        }
+                    }
+                    else {
+                        addOneTile();
+                    }
+                }
+                if(direction === "left" || direction === "right" || direction === "up" || direction === "down") {
+                    addMove();
+                }
+            }
+        }
+    });
+    
     function moveDown() {
         for(var i = 1; i < 17; i++) {
             if(i < 13) {
